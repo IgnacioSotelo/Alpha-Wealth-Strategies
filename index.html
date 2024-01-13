@@ -211,7 +211,7 @@
 
     <section class="section-4 flex jcc">
         <img class="s4-gradient-alpha-down" src="assets/Gradient Alpha down.png" alt="">
-        
+
         <img class="s4-gradient-alpha-up" src="assets/Gradient Alpha top.png" alt="">
         <div class="s4-cards-wrap">
             <div class="s4-wrap-text-1">
@@ -223,7 +223,8 @@
             </div>
             <div class="s4-wrap-text-2">
                 <h3 class="s4-h3-title s4-title-2 font-inter">Tailored Investment Planning</h3>
-                <p class="p-grid-text s4-info-2 font-poppins">Receive personalized investment plans aligned with your risk
+                <p class="p-grid-text s4-info-2 font-poppins">Receive personalized investment plans aligned with your
+                    risk
                     tolerance.
                     Explore diversified investment options tailored to your financial profile.
                 </p>
@@ -255,17 +256,16 @@
                     d="M35 54V375.967C35 409.923 48.4892 442.489 72.5 466.5V466.5C96.5108 490.511 129.077 504 163.033 504H847.85C892.446 504 935.216 521.716 966.75 553.25V553.25C998.284 584.784 1016 627.554 1016 672.15V707.85C1016 752.446 998.284 795.216 966.75 826.75V826.75C935.216 858.284 892.446 876 847.85 876H163.033C129.077 876 96.5108 889.489 72.5 913.5V913.5C48.4892 937.511 35 970.077 35 1004.03V1120.47C35 1154.42 48.4892 1186.99 72.5 1211V1211C96.5108 1235.01 129.077 1248.5 163.033 1248.5H847.85C892.446 1248.5 935.216 1266.22 966.75 1297.75V1297.75C998.284 1329.28 1016 1372.05 1016 1416.65V1451.85C1016 1496.45 998.284 1539.22 966.75 1570.75V1570.75C935.216 1602.28 892.446 1620 847.85 1620H678.24C643.831 1620 610.831 1633.67 586.5 1658V1658C562.169 1682.33 548.5 1715.33 548.5 1749.74V2103"
                     stroke="#EBEBEB" stroke-width="9" stroke-dasharray="20 20" />
                 <defs>
-                    <filter id="filter0_d_483_98" x="0" y="0" width="1051" height="2150.5"
-                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <filter id="filter0_d_483_98" x="0" y="0" width="1051" height="2150.5" filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
                         <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                        <feColorMatrix in="SourceAlpha" type="matrix"
-                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                            result="hardAlpha" />
                         <feOffset dy="7" />
                         <feComposite in2="hardAlpha" operator="out" />
                         <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
                         <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_483_98" />
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_483_98"
-                            result="shape" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_483_98" result="shape" />
                     </filter>
                     <linearGradient id="paint0_linear_483_98" x1="525.5" y1="35" x2="525.5" y2="2108.5"
                         gradientUnits="userSpaceOnUse">
@@ -376,6 +376,20 @@
     </script>
 
     <script>
+
+        $('[class*="s3-grid-item"]').each(function () {
+            gsap.from($(this), {
+                y: 10,
+                autoAlpha: 0,
+                scrollTrigger: {
+                    trigger: $(this),
+                    start: 'top bottom-=200',
+                    end: 'bottom center+=200',
+                    scrub: 1,
+                }
+            });
+        });
+
         gsap.fromTo('.s3-window-1', {
             y: 200,
             autoAlpha: 0
@@ -414,30 +428,30 @@
             }
         });
 
-        tl1.fromTo('.circle-1',{
+        tl1.fromTo('.circle-1', {
             scale: 0
-        },{scale:1})
-        .fromTo('.s4-guide-1', {
-            scaleY: 0
-        }, {
-            scaleY: 1
-        }, "<=0.4")
-        .fromTo('.s4-point-1', {
-            scale: 0
-        }, {
-            scale: 1
-        }, "<=0.4")
-        .fromTo('.s4-title-1', {
-            autoAlpha: 0
-        }, {
-            autoAlpha: 1
-        }, "<=0.5")
-        .fromTo('.s4-info-1', {
-            autoAlpha: 0
-        }, {
-            autoAlpha: 1
-        }, "<=0.6");
-    
+        }, { scale: 1 })
+            .fromTo('.s4-guide-1', {
+                scaleY: 0
+            }, {
+                scaleY: 1
+            }, "<=0.4")
+            .fromTo('.s4-point-1', {
+                scale: 0
+            }, {
+                scale: 1
+            }, "<=0.4")
+            .fromTo('.s4-title-1', {
+                autoAlpha: 0
+            }, {
+                autoAlpha: 1
+            }, "<=0.5")
+            .fromTo('.s4-info-1', {
+                autoAlpha: 0
+            }, {
+                autoAlpha: 1
+            }, "<=0.6");
+
         let tl2 = gsap.timeline({
             scrollTrigger: {
                 trigger: '.s4-wrap-text-2',
@@ -447,30 +461,30 @@
             }
         });
 
-        tl2.fromTo('.circle-2',{
+        tl2.fromTo('.circle-2', {
             scale: 0
-        },{scale:1})
-        .fromTo('.s4-guide-2', {
-            scaleY: 0
-        }, {
-            scaleY: 1
-        }, "<=0.4")
-        .fromTo('.s4-point-2', {
-            scale: 0
-        }, {
-            scale: 1
-        }, "<=0.4")
-        .fromTo('.s4-title-2', {
-            autoAlpha: 0
-        }, {
-            autoAlpha: 1
-        }, "<=0.5")
-        .fromTo('.s4-info-2', {
-            autoAlpha: 0
-        }, {
-            autoAlpha: 1
-        }, "<=0.6");
-    
+        }, { scale: 1 })
+            .fromTo('.s4-guide-2', {
+                scaleY: 0
+            }, {
+                scaleY: 1
+            }, "<=0.4")
+            .fromTo('.s4-point-2', {
+                scale: 0
+            }, {
+                scale: 1
+            }, "<=0.4")
+            .fromTo('.s4-title-2', {
+                autoAlpha: 0
+            }, {
+                autoAlpha: 1
+            }, "<=0.5")
+            .fromTo('.s4-info-2', {
+                autoAlpha: 0
+            }, {
+                autoAlpha: 1
+            }, "<=0.6");
+
         let tl3 = gsap.timeline({
             scrollTrigger: {
                 trigger: '.s4-wrap-text-3',
@@ -480,30 +494,30 @@
             }
         });
 
-        tl3.fromTo('.circle-3',{
+        tl3.fromTo('.circle-3', {
             scale: 0
-        },{scale:1})
-        .fromTo('.s4-guide-3', {
-            scaleX: 0
-        }, {
-            scaleX: 1
-        }, "<=0.4")
-        .fromTo('.s4-point-3', {
-            scale: 0
-        }, {
-            scale: 1
-        }, "<=0.4")
-        .fromTo('.s4-title-3', {
-            autoAlpha: 0
-        }, {
-            autoAlpha: 1
-        }, "<=0.5")
-        .fromTo('.s4-info-3', {
-            autoAlpha: 0
-        }, {
-            autoAlpha: 1
-        }, "<=0.6");
-    
+        }, { scale: 1 })
+            .fromTo('.s4-guide-3', {
+                scaleX: 0
+            }, {
+                scaleX: 1
+            }, "<=0.4")
+            .fromTo('.s4-point-3', {
+                scale: 0
+            }, {
+                scale: 1
+            }, "<=0.4")
+            .fromTo('.s4-title-3', {
+                autoAlpha: 0
+            }, {
+                autoAlpha: 1
+            }, "<=0.5")
+            .fromTo('.s4-info-3', {
+                autoAlpha: 0
+            }, {
+                autoAlpha: 1
+            }, "<=0.6");
+
         let tl4 = gsap.timeline({
             scrollTrigger: {
                 trigger: '.s4-wrap-text-4',
@@ -513,30 +527,30 @@
             }
         });
 
-        tl4.fromTo('.circle-4',{
+        tl4.fromTo('.circle-4', {
             scale: 0
-        },{scale:1})
-        .fromTo('.s4-guide-4', {
-            scaleY: 0
-        }, {
-            scaleY: 1
-        }, "<=0.4")
-        .fromTo('.s4-point-4', {
-            scale: 0
-        }, {
-            scale: 1
-        }, "<=0.4")
-        .fromTo('.s4-title-4', {
-            autoAlpha: 0
-        }, {
-            autoAlpha: 1
-        }, "<=0.5")
-        .fromTo('.s4-info-4', {
-            autoAlpha: 0
-        }, {
-            autoAlpha: 1
-        }, "<=0.6");
-    
+        }, { scale: 1 })
+            .fromTo('.s4-guide-4', {
+                scaleY: 0
+            }, {
+                scaleY: 1
+            }, "<=0.4")
+            .fromTo('.s4-point-4', {
+                scale: 0
+            }, {
+                scale: 1
+            }, "<=0.4")
+            .fromTo('.s4-title-4', {
+                autoAlpha: 0
+            }, {
+                autoAlpha: 1
+            }, "<=0.5")
+            .fromTo('.s4-info-4', {
+                autoAlpha: 0
+            }, {
+                autoAlpha: 1
+            }, "<=0.6");
+
     </script>
 
     <script>
@@ -561,9 +575,6 @@
             yPercent: -100
         });
     </script>
-
-
-
 
     <script>
         gsap.set('.s4-circle-wrap-1', {
