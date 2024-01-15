@@ -487,6 +487,11 @@
         </button>
     </div>
 
+    <div class="div-loader flex jcc aic">
+        <h1 class="font-inter">Alpha Wealth</h1>
+        <div class="loader-mask"></div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Draggable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollToPlugin.min.js"></script>
@@ -508,6 +513,23 @@
         });
 
         gsap.ticker.lagSmoothing(0);
+    </script>
+
+    <script>
+        gsap.to('.loader-mask', {
+            xPercent: 100,
+            duration: 2
+        });
+
+        gsap.to('.div-loader', {
+            autoAlpha: 0,
+            delay: 3,
+            duration: 1,
+            onComplete: () => {
+                $('html').css("overflow-y", "scroll");
+                $('.div-loader').css("display", "none");
+            }
+        });
     </script>
 
     <script>
@@ -828,9 +850,11 @@
         });
 
         $('.btn-goup').on("mousedown", function () {
-            gsap.to(window, { duration: 1, scrollTo: {
-                y: 0
-            } });
+            gsap.to(window, {
+                duration: 1, scrollTo: {
+                    y: 0
+                }
+            });
         });
     </script>
 </body>
