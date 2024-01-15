@@ -521,15 +521,17 @@
             duration: 2
         });
 
-        gsap.to('.div-loader', {
-            autoAlpha: 0,
-            delay: 3,
-            duration: 1,
-            onComplete: () => {
-                $('html').css("overflow-y", "scroll");
-                $('.div-loader').css("display", "none");
-            }
-        });
+        window.onload = function () {
+            gsap.to('.div-loader', {
+                autoAlpha: 0,
+                delay: 3,
+                duration: 1,
+                onComplete: () => {
+                    $('html').css("overflow-y", "scroll");
+                    $('.div-loader').css("display", "none");
+                }
+            });
+        };
     </script>
 
     <script>
